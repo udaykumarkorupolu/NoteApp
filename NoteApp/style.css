@@ -1,0 +1,144 @@
+.body {
+  /* background: linear-gradient(to right, #8AAAE5, #FFFFFF); */
+  /* background: linear-gradient(to right, #735da5, #d3c5e5); */
+  background: linear-gradient(
+    130deg,
+    var(--primaryColor),
+    var(--secondaryColor)
+  );
+  font-family: "Poppins", sans-serif;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-wrap: break-word;
+}
+:root {
+  --blue: blue;
+  --primaryColor: #c4dfe6;
+  --secondaryColor: #66a5ad;
+  --white: white;
+  --whiteSmoke: whiteSmoke;
+  --black: black;
+}
+.dark-theme {
+  --blue: white;
+  --primaryColor: black;
+  --secondaryColor: black;
+  --white: black;
+  --whiteSmoke: black;
+  --black: white;
+}
+
+.header-container p {
+  color: var(--black);
+  font-size: 30px;
+  text-align: center;
+}
+.header-container img {
+  background: transparent;
+  height: 50px;
+  width: 40px;
+}
+
+.add-note {
+  background-color: var(--blue);
+  color: var(--white);
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px !important;
+}
+.fa-plus {
+  color: var(--white);
+}
+
+.note-container {
+  border: 1px solid white;
+  color: var(--black);
+  background-color: var(--whiteSmoke);
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 23px;
+  visibility: hidden;
+  position: absolute;
+  top: 15%;
+}
+
+.note-container input,
+.note-container textarea {
+  box-shadow: 0 0px 5px 2px rgb(163, 153, 153);
+  margin-top: 25px !important;
+  border: none;
+}
+
+ul {
+  flex-wrap: wrap;
+  list-style: none;
+  user-select: none;
+}
+.note {
+  background: #fffae3;
+  box-shadow: 0 0 5px var(--whiteSmoke);
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  cursor: move;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.note-title {
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inside-note {
+  max-height: 150px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  scrollbar-width: none;
+}
+.list-item-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.edit {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.delete {
+  background-color: transparent;
+  color: red;
+  right: 15px;
+  border: none;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+#search-bar {
+  outline: none;
+  width: 350px;
+}
+#theme-icon {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  height: 35px;
+  width: 35px;
+}
+#sun-icon {
+  visibility: hidden;
+}
