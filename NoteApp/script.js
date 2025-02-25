@@ -15,7 +15,7 @@ $(document).ready(function () {
 
   $(".add-note").click(() => {
     $(".note-container").css("visibility", "visible");
-
+    $(".note-container-bg").show();
     $("#title").val("");
     $("#note").val("");
     $(".save-note").removeData("editMode");
@@ -24,6 +24,7 @@ $(document).ready(function () {
 
   $(".cancel").click(() => {
     $(".note-container").css("visibility", "hidden");
+    $(".note-container-bg").hide();
   });
 
  
@@ -49,6 +50,7 @@ $(document).ready(function () {
     }
 
     $(".note-container").css("visibility", "hidden");
+    $(".note-container-bg").hide();
   });
   
   function saveToLocalStorage() {
@@ -63,18 +65,20 @@ $(document).ready(function () {
       if (notes.length===0) {
         localStorage.removeItem("notes")
       } else {
-        localStorage.setItem("notes",JSON.stringify("notes"))
+        localStorage.setItem("notes",JSON.stringify(notes))
       }
   }
 
+  
   function loadFromLocalStorage(){
     let savedata=localStorage.getItem("notes");
-    let notes=savedata ? JSON.parse("notes"):[];
+    let notes=savedata ? JSON.parse(savedata):[];
 
     notes.forEach(function(data){
       addToNotes(data.title,data.note);
     })
   }
+
 
 
  
@@ -103,18 +107,21 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".edit", function () {
-    let currentNote = $(this).closest(".note");
+    let currentNote = $(this).closest(".note"); 
     let originalTitle = currentNote.find(".note-title").text();
     let originalContent = currentNote.find(".note-content").text();
 
-    $("#title").val(originalTitle);
+    $("#title").val(originalTitle); 
     $("#note").val(originalContent);
 
-    $(".note-container").css("visibility", "visible");
+    $(".note-container").css("visibility", "visible"); 
+    $(".note-container-bg").show();
+
     $(".save-note").data("editMode", true);
     $(".save-note").data("currentNote", currentNote);
-    saveToLocalStorage();
   });
+
+  
 
   function dropAndDown() {
     $("#note-list").sortable();
