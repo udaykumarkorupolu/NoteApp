@@ -12,6 +12,7 @@
   min-height: 100vh;
   overflow-wrap: break-word;
 }
+
 :root {
   --blue: blue;
   --primaryColor: #c4dfe6;
@@ -21,6 +22,7 @@
   --black: black;
   --transperent:rgba(0,0,0,0.25);
 }
+
 .dark-theme {
   --blue: white;
   --primaryColor: black;
@@ -36,6 +38,7 @@
   font-size: 30px;
   text-align: center;
 }
+
 .header-container img {
   background: transparent;
   height: 50px;
@@ -52,6 +55,7 @@
   width: 50px;
   border-radius: 25px !important;
 }
+
 .fa-plus {
   color: var(--white);
 }
@@ -70,9 +74,11 @@
   left: 50%;
   transform:translate(-50%,-50%);
 }
+
 .overlay{
   background-color:var(--transperent);
 }
+
 .note-container-bg{
   background-color:var(--transperent);
   position: fixed;
@@ -97,6 +103,7 @@ ul {
   list-style: none;
   user-select: none;
 }
+
 .note {
   background: #fffae3;
   box-shadow: 0 0 5px var(--whiteSmoke);
@@ -117,16 +124,19 @@ ul {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .inside-note {
   max-height: 150px;
   overflow-y: auto;
   word-wrap: break-word;
   scrollbar-width: none;
 }
+
 .list-item-buttons {
   display: flex;
   justify-content: space-between;
 }
+
 .edit {
   background-color: transparent;
   border: none;
@@ -144,10 +154,12 @@ ul {
   bottom: 15px;
   right: 15px;
 }
+
 #search-bar {
   outline: none;
   width: 350px;
 }
+
 #theme-icon {
   position: absolute;
   top: 20px;
@@ -156,6 +168,7 @@ ul {
   width: 35px;
   z-index: 20;
 }
+
 #sun-icon {
   visibility: hidden;
 }
