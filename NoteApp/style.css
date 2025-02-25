@@ -1,6 +1,4 @@
 .body {
-  /* background: linear-gradient(to right, #8AAAE5, #FFFFFF); */
-  /* background: linear-gradient(to right, #735da5, #d3c5e5); */
   background: linear-gradient(
     130deg,
     var(--primaryColor),
@@ -21,6 +19,7 @@
   --white: white;
   --whiteSmoke: whiteSmoke;
   --black: black;
+  --transperent:rgba(0,0,0,0.25);
 }
 .dark-theme {
   --blue: white;
@@ -29,6 +28,7 @@
   --white: black;
   --whiteSmoke: black;
   --black: white;
+  --transperent:rgba(255,255,255,0.25);
 }
 
 .header-container p {
@@ -65,9 +65,25 @@
   text-align: center;
   margin-top: 23px;
   visibility: hidden;
-  position: absolute;
-  top: 15%;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform:translate(-50%,-50%);
 }
+.overlay{
+  background-color:var(--transperent);
+}
+.note-container-bg{
+  background-color:var(--transperent);
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: none;
+
+}
+
 
 .note-container input,
 .note-container textarea {
@@ -134,10 +150,11 @@ ul {
 }
 #theme-icon {
   position: absolute;
-  top: 60px;
+  top: 20px;
   right: 30px;
   height: 35px;
   width: 35px;
+  z-index: 20;
 }
 #sun-icon {
   visibility: hidden;
